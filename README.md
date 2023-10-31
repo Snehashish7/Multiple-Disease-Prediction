@@ -16,3 +16,5 @@ Run the Streamlit app.
 Input your medical information and click "Predict."
 View the results and visualizations.
 We hope this system helps you to stay healthy and informed.
+
+or, use this link(https://multiple-disease-prediction-ml.streamlit.app/) to visit our app.
