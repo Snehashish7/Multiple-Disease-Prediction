@@ -249,10 +249,6 @@ if (selected == "Breast Cancer Prediction"):
     st.title("Breast Cancer Prediction using ML")
     
     col1, col2, col3, col4, col5 = st.columns(5)  
-    #mean radius	mean texture	mean perimeter	mean area	mean smoothness	mean compactness	
-    #'mean concavity',
-    #    'mean concave points', 'mean symmetry', 'mean fractal dimension',
-    #    'radius error', 'texture error', 'perimeter error', 'area error',
 
     with col1:
         fo = st.text_input('mean radius')
@@ -307,12 +303,7 @@ if (selected == "Breast Cancer Prediction"):
         
     with col3:
         DFA = st.text_input('symmetry error')
-    #    'smoothness error', 'compactness error', 'concavity error',
-    #    'concave points error', 'symmetry error', 'fractal dimension error',
-    #    'worst radius', 'worst texture', 'worst perimeter', 'worst area',
-    #    'worst smoothness', 'worst compactness', 'worst concavity',
-    #    'worst concave points', 'worst symmetry', 'worst fractal dimension',
-    #    'label'
+
     with col4:
         spread1 = st.text_input('fractal dimension error')
         
