@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun May 22 11:53:51 2022
 
-@author: siddhardhan
-"""
 
 import pickle
 import streamlit as st
@@ -18,6 +14,8 @@ heart_disease_model = pickle.load(open('heart_disease_model.sav','rb'))
 
 parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
+BreastCancer_model = pickle.load(open('BreastCancer_model.sav', 'rb'))
+
 
 
 # sidebar for navigation
@@ -27,8 +25,9 @@ with st.sidebar:
                           
                           ['Diabetes Prediction',
                            'Heart Disease Prediction',
-                           'Parkinsons Prediction'],
-                          icons=['activity','heart','person'],
+                           'Parkinsons Prediction',
+                           'Breast Cancer Prediction'],
+                          icons=['activity','heart','person', 'person'],
                           default_index=0)
     
     
@@ -243,4 +242,128 @@ if (selected == "Parkinsons Prediction"):
         
     st.success(parkinsons_diagnosis)
 
+# Breast Cancer Prediction Page
+if (selected == "Breast Cancer Prediction"):
+    
+    # page title
+    st.title("Breast Cancer Prediction using ML")
+    
+    col1, col2, col3, col4, col5 = st.columns(5)  
+    #mean radius	mean texture	mean perimeter	mean area	mean smoothness	mean compactness	
+    #'mean concavity',
+    #    'mean concave points', 'mean symmetry', 'mean fractal dimension',
+    #    'radius error', 'texture error', 'perimeter error', 'area error',
+
+    with col1:
+        fo = st.text_input('mean radius')
+        
+    with col2:
+        fhi = st.text_input('mean texture')
+        
+    with col3:
+        flo = st.text_input('mean perimeter')
+        
+    with col4:
+        Jitter_percent = st.text_input('mean area')
+        
+    with col5:
+        Jitter_Abs = st.text_input('mean smoothness')
+        
+    with col1:
+        RAP = st.text_input('mean compactness')
+        
+    with col2:
+        PPQ = st.text_input('mean concavity')
+        
+    with col3:
+        DDP = st.text_input('mean concave points')
+        
+    with col4:
+        Shimmer = st.text_input('mean symmetry')
+        
+    with col5:
+        Shimmer_dB = st.text_input('mean fractal dimension')
+        
+    with col1:
+        APQ3 = st.text_input('radius error')
+        
+    with col2:
+        APQ5 = st.text_input('perimeter error')
+        
+    with col3:
+        APQ = st.text_input('area error')
+        
+    with col4:
+        DDA = st.text_input('smoothness error')
+        
+    with col5:
+        NHR = st.text_input('compactness error')
+        
+    with col1:
+        HNR = st.text_input('concavity error')
+        
+    with col2:
+        RPDE = st.text_input('concave points error')
+        
+    with col3:
+        DFA = st.text_input('symmetry error')
+    #    'smoothness error', 'compactness error', 'concavity error',
+    #    'concave points error', 'symmetry error', 'fractal dimension error',
+    #    'worst radius', 'worst texture', 'worst perimeter', 'worst area',
+    #    'worst smoothness', 'worst compactness', 'worst concavity',
+    #    'worst concave points', 'worst symmetry', 'worst fractal dimension',
+    #    'label'
+    with col4:
+        spread1 = st.text_input('fractal dimension error')
+        
+    with col5:
+        spread2 = st.text_input('worst radius')
+        
+    with col1:
+        D2 = st.text_input('worst texture')
+        
+    with col2:
+        PPE = st.text_input('worst perimeter')
+
+        
+    with col3:
+        wa = st.text_input('worst area')
+        
+    with col4:
+        ws = st.text_input('worst smoothness')
+        
+    with col5:
+        w_cm = st.text_input('worst compactness')
+
+    with col1:
+        w_con = st.text_input('worst concavity')
+        
+    with col2:
+        w_cp = st.text_input('worst concave points')
+
+        
+    with col3:
+        w_sym = st.text_input('worst symmetry')
+        
+    with col4:
+        w_fd = st.text_input('worst fractal dimension')
+        
+    with col5:
+        label = st.text_input('label')
+        
+    
+    
+    # code for Prediction
+    cancer_diagnosis = ''
+    
+    # creating a button for Prediction    
+    if st.button("Breast Cancer Test Result"):
+        cancer_prediction = BreastCancer_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE, wa, ws, w_cm, w_con, w_cp, w_fd,w_sym,label]])                          
+        
+        if (cancer_prediction[0] == 1):
+          parkinsons_diagnosis = "The person has Breast Cancer"
+        else:
+          parkinsons_diagnosis = "The person does not have Breast Cancr"
+        
+    st.success(cancer_diagnosis)
 
