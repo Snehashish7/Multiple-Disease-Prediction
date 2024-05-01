@@ -27,7 +27,7 @@ with st.sidebar:
                            'Heart Disease Prediction',
                            'Parkinsons Prediction',
                            'Breast Cancer Prediction'],
-                          icons=['activity','heart-pulse','person', 'person-standing-dress'],
+                          icons=['activity','heart-pulse','person', 'clipboard2-pulse'],
                           default_index=0)
     
     
