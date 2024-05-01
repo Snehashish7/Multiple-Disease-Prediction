@@ -348,9 +348,6 @@ if (selected == "Breast Cancer Prediction"):
     with col4:
         w_fd = st.text_input('worst fractal dimension')
         
-    with col5:
-        label = st.text_input('label')
-        
     
     
     # code for Prediction
@@ -358,7 +355,7 @@ if (selected == "Breast Cancer Prediction"):
     
     # creating a button for Prediction    
     if st.button("Breast Cancer Test Result"):
-        cancer_prediction = BreastCancer_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE, wa, ws, w_cm, w_con, w_cp, w_fd,w_sym,label]])                          
+        cancer_prediction = BreastCancer_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE, wa, ws, w_cm, w_con, w_cp, w_fd,w_sym]])                          
         
         if (cancer_prediction[0] == 1):
           parkinsons_diagnosis = "The person has Breast Cancer"
