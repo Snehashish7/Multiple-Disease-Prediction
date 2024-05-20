@@ -251,96 +251,96 @@ if (selected == "Breast Cancer Prediction"):
     col1, col2, col3, col4, col5 = st.columns(5)  
 
     with col1:
-        fo = st.text_input('mean radius')
+        fo = st.number_input('mean radius')
         
     with col2:
-        fhi = st.text_input('mean texture')
+        fhi = st.number_input('mean texture')
         
     with col3:
-        flo = st.text_input('mean perimeter')
+        flo = st.number_input('mean perimeter')
         
     with col4:
-        Jitter_percent = st.text_input('mean area')
+        Jitter_percent = st.number_input('mean area')
         
     with col5:
-        Jitter_Abs = st.text_input('mean smoothness')
+        Jitter_Abs = st.number_input('mean smoothness')
         
     with col1:
-        RAP = st.text_input('mean compactness')
+        RAP = st.number_input('mean compactness')
         
     with col2:
-        PPQ = st.text_input('mean concavity')
+        PPQ = st.number_input('mean concavity')
         
     with col3:
-        DDP = st.text_input('mean concave points')
+        DDP = st.number_input('mean concave points')
         
     with col4:
-        Shimmer = st.text_input('mean symmetry')
+        Shimmer = st.number_input('mean symmetry')
         
     with col5:
-        Shimmer_dB = st.text_input('mean fractal dimension')
+        Shimmer_dB = st.number_input('mean fractal dimension')
         
     with col1:
-        APQ3 = st.text_input('radius error')
+        APQ3 = st.number_input('radius error')
         
     with col2:
-        APQ4 = st.text_input('texture error')
+        APQ4 = st.number_input('texture error')
 
     with col3:
-        APQ5 = st.text_input('perimeter error')
+        APQ5 = st.number_input('perimeter error')
         
     with col4:
-        APQ = st.text_input('area error')
+        APQ = st.number_input('area error')
         
     with col5:
-        DDA = st.text_input('smoothness error')
+        DDA = st.number_input('smoothness error')
         
     with col1:
-        NHR = st.text_input('compactness error')
+        NHR = st.number_input('compactness error')
         
     with col2:
-        HNR = st.text_input('concavity error')
+        HNR = st.number_input('concavity error')
         
     with col3:
-        RPDE = st.text_input('concave points error')
+        RPDE = st.number_input('concave points error')
         
     with col4:
-        DFA = st.text_input('symmetry error')
+        DFA = st.number_input('symmetry error')
 
     with col5:
-        spread1 = st.text_input('fractal dimension error')
+        spread1 = st.number_input('fractal dimension error')
         
     with col1:
-        spread2 = st.text_input('worst radius')
+        spread2 = st.number_input('worst radius')
         
     with col2:
-        D2 = st.text_input('worst texture')
+        D2 = st.number_input('worst texture')
         
     with col3:
-        PPE = st.text_input('worst perimeter')
-
-        
-    with col4:
-        wa = st.text_input('worst area')
-        
-    with col5:
-        ws = st.text_input('worst smoothness')
-        
-    with col1:
-        w_cm = st.text_input('worst compactness')
-
-    with col2:
-        w_con = st.text_input('worst concavity')
-        
-    with col3:
-        w_cp = st.text_input('worst concave points')
+        PPE = st.number_input('worst perimeter')
 
         
     with col4:
-        w_sym = st.text_input('worst symmetry')
+        wa = st.number_input('worst area')
         
     with col5:
-        w_fd = st.text_input('worst fractal dimension')
+        ws = st.number_input('worst smoothness')
+        
+    with col1:
+        w_cm = st.number_input('worst compactness')
+
+    with col2:
+        w_con = st.number_input('worst concavity')
+        
+    with col3:
+        w_cp = st.number_input('worst concave points')
+
+        
+    with col4:
+        w_sym = st.number_input('worst symmetry')
+        
+    with col5:
+        w_fd = st.number_input('worst fractal dimension')
         
     
     
@@ -352,9 +352,9 @@ if (selected == "Breast Cancer Prediction"):
         cancer_prediction = BreastCancer_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ4,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE, wa, ws, w_cm, w_con, w_cp, w_sym, w_fd]])                          
         
         if (cancer_prediction[0] == 1):
-          cancer_diagnosis = "The person has Breast Cancer"
+          cancer_diagnosis = "The Breast Cancer is Benign"
         else:
-          cancer_diagnosis = "The person does not have Breast Cancr"
+          cancer_diagnosis = "The Breast cancer is Malignant"
         
     st.success(cancer_diagnosis)
 
