@@ -346,12 +346,12 @@ if (selected == "Breast Cancer Prediction"):
     
     # creating a button for Prediction    
     if st.button("Breast Cancer Test Result"):
-        cancer_prediction = BreastCancer_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE, wa, ws, w_cm, w_con, w_cp, w_fd,w_sym]])                          
+        cancer_prediction = BreastCancer_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE, wa, ws, w_cm, w_con, w_cp, w_sym, w_fd]])                          
         
         if (cancer_prediction[0] == 1):
-          parkinsons_diagnosis = "The person has Breast Cancer"
+          cancer_diagnosis = "The person has Breast Cancer"
         else:
-          parkinsons_diagnosis = "The person does not have Breast Cancr"
+          cancer_diagnosis = "The person does not have Breast Cancr"
         
     st.success(cancer_diagnosis)
 
