@@ -356,5 +356,5 @@ if (selected == "Breast Cancer Prediction"):
         else:
           cancer_diagnosis = "The Breast cancer is Malignant"
         
-    st.success(cancer_diagnosis)
+    st.warning(cancer_diagnosis)
 
