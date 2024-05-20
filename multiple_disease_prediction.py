@@ -284,6 +284,9 @@ if (selected == "Breast Cancer Prediction"):
         APQ3 = st.text_input('radius error')
         
     with col2:
+        APQ4 = st.text_input('texture error')
+
+    with col2:
         APQ5 = st.text_input('perimeter error')
         
     with col3:
@@ -346,7 +349,7 @@ if (selected == "Breast Cancer Prediction"):
     
     # creating a button for Prediction    
     if st.button("Breast Cancer Test Result"):
-        cancer_prediction = BreastCancer_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE, wa, ws, w_cm, w_con, w_cp, w_sym, w_fd]])                          
+        cancer_prediction = BreastCancer_model.predict([[fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ,DDP,Shimmer,Shimmer_dB,APQ3,APQ4,APQ5,APQ,DDA,NHR,HNR,RPDE,DFA,spread1,spread2,D2,PPE, wa, ws, w_cm, w_con, w_cp, w_sym, w_fd]])                          
         
         if (cancer_prediction[0] == 1):
           cancer_diagnosis = "The person has Breast Cancer"
