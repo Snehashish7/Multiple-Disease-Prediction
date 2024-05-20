@@ -286,60 +286,60 @@ if (selected == "Breast Cancer Prediction"):
     with col2:
         APQ4 = st.text_input('texture error')
 
-    with col2:
+    with col3:
         APQ5 = st.text_input('perimeter error')
         
-    with col3:
+    with col4:
         APQ = st.text_input('area error')
         
-    with col4:
+    with col5:
         DDA = st.text_input('smoothness error')
         
-    with col5:
+    with col1:
         NHR = st.text_input('compactness error')
         
-    with col1:
+    with col2:
         HNR = st.text_input('concavity error')
         
-    with col2:
+    with col3:
         RPDE = st.text_input('concave points error')
         
-    with col3:
+    with col4:
         DFA = st.text_input('symmetry error')
 
-    with col4:
+    with col5:
         spread1 = st.text_input('fractal dimension error')
         
-    with col5:
+    with col1:
         spread2 = st.text_input('worst radius')
         
-    with col1:
+    with col2:
         D2 = st.text_input('worst texture')
         
-    with col2:
+    with col3:
         PPE = st.text_input('worst perimeter')
 
         
-    with col3:
+    with col4:
         wa = st.text_input('worst area')
         
-    with col4:
+    with col5:
         ws = st.text_input('worst smoothness')
         
-    with col5:
+    with col1:
         w_cm = st.text_input('worst compactness')
 
-    with col1:
+    with col2:
         w_con = st.text_input('worst concavity')
         
-    with col2:
+    with col3:
         w_cp = st.text_input('worst concave points')
 
         
-    with col3:
+    with col4:
         w_sym = st.text_input('worst symmetry')
         
-    with col4:
+    with col5:
         w_fd = st.text_input('worst fractal dimension')
         
     
